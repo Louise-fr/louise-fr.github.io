@@ -3,10 +3,10 @@
   <channel>
     <title>Jekyll-Uno</title>
     <description>Jekyll-Uno - a minimal, responsive theme for Jekyll</description>
-    <link>http://joshgerdes.com/jekyll-uno/jekyll-uno/</link>
-    <atom:link href="http://joshgerdes.com/jekyll-uno/jekyll-uno/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 03 Dec 2020 16:36:43 +0100</pubDate>
-    <lastBuildDate>Thu, 03 Dec 2020 16:36:43 +0100</lastBuildDate>
+    <link>http://joshgerdes.com/jekyll-uno//</link>
+    <atom:link href="http://joshgerdes.com/jekyll-uno//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 03 Dec 2020 16:51:04 +0100</pubDate>
+    <lastBuildDate>Thu, 03 Dec 2020 16:51:04 +0100</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
@@ -28,8 +28,8 @@
 
 </description>
         <pubDate>Fri, 08 Jan 2016 16:04:23 +0100</pubDate>
-        <link>http://joshgerdes.com/jekyll-uno/jekyll-uno/2016/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">http://joshgerdes.com/jekyll-uno/jekyll-uno/2016/welcome-to-jekyll/</guid>
+        <link>http://joshgerdes.com/jekyll-uno//2016/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://joshgerdes.com/jekyll-uno//2016/welcome-to-jekyll/</guid>
         
         <category>jekyll</category>
         
