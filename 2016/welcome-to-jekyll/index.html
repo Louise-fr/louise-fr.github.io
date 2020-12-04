@@ -54,7 +54,7 @@
   <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
   
-  <link rel="stylesheet" href="/css/main.css?1607076978784555000">
+  <link rel="stylesheet" href="/css/main.css?1607077815628063000">
   <link rel="canonical" href="http://joshgerdes.com/jekyll-uno/2016/welcome-to-jekyll/">
   <link rel="alternate" type="application/rss+xml" title="Jekyll-Uno" href="/feed.xml">
   <!-- Added mathjax -->
@@ -208,153 +208,6 @@
 
 <p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://github.com/jekyll/jekyll-help">Jekyll’s dedicated Help repository</a>.</p>
 
-<p>Test :)</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iris_data_file_path</span> <span class="o">=</span> <span class="s">'./iris.data'</span>
-<span class="n">iris_data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">iris_data_file_path</span><span class="p">)</span>
-<span class="n">iris_data</span><span class="p">.</span><span class="n">describe</span><span class="p">()</span>
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#Iris SVM
-</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="n">iris_data_file_path</span> <span class="o">=</span> <span class="s">'./iris.data'</span>
-<span class="n">iris_data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">iris_data_file_path</span><span class="p">)</span>
-<span class="c1">#iris.head()
-</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">iris_data</span><span class="p">[[</span><span class="s">"sepal_length"</span><span class="p">,</span><span class="s">"sepal_width"</span><span class="p">,</span><span class="s">"petal_length"</span><span class="p">,</span><span class="s">"petal_width"</span><span class="p">]].</span><span class="n">values</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">iris_data</span><span class="p">[</span><span class="s">"class"</span><span class="p">].</span><span class="n">values</span>
-
-
-<span class="c1"># X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
-</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">svm</span><span class="p">.</span><span class="n">SVC</span><span class="p">()</span>
-<span class="c1"># clf.fit(X_train, y_train)
-</span><span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Accuracy: %0.2f (+/- %0.2f)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">scores</span><span class="p">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">scores</span><span class="p">.</span><span class="n">std</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span>
-
-
-<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Iris-setosa'</span><span class="p">:</span><span class="s">'r'</span><span class="p">,</span> <span class="s">'Iris-versicolor'</span><span class="p">:</span><span class="s">'g'</span><span class="p">,</span> <span class="s">'Iris-virginica'</span><span class="p">:</span><span class="s">'b'</span><span class="p">}</span>
-
-<span class="n">x1</span> <span class="o">=</span> <span class="n">iris_data</span><span class="p">[</span><span class="s">"sepal_length"</span><span class="p">].</span><span class="n">values</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="n">iris_data</span><span class="p">[</span><span class="s">"sepal_width"</span><span class="p">].</span><span class="n">values</span>
-<span class="n">x2</span> <span class="o">=</span> <span class="n">iris_data</span><span class="p">[</span><span class="s">"petal_length"</span><span class="p">].</span><span class="n">values</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">iris_data</span><span class="p">[</span><span class="s">"petal_width"</span><span class="p">].</span><span class="n">values</span>
-<span class="n">colors_class</span> <span class="o">=</span> <span class="p">[</span><span class="n">colors</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iris_data</span><span class="p">[</span><span class="s">"class"</span><span class="p">].</span><span class="n">values</span><span class="p">]</span>
-
-<span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors_class</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Sepal length'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Sepal width'</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors_class</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Petal length'</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Petal width'</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
-
-
-
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.96666667 0.96666667 0.96666667 0.93333333 1.        ]
-Accuracy: 0.97 (+/- 0.04)
-</code></pre></div></div>
-
-<p><img src="iris_files/iris_2_1.svg" alt="svg" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#Wine SVM
-</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">SGDClassifier</span> 
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">target</span><span class="p">)</span> <span class="o">=</span> <span class="n">datasets</span><span class="p">.</span><span class="n">load_wine</span><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
-<span class="c1">#X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.20, random_state=42)
-</span>
-<span class="c1">#SVM sans normalisation
-</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">svm</span><span class="p">.</span><span class="n">SVC</span><span class="p">()</span>
-<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="c1">#print(scores)
-</span><span class="k">print</span><span class="p">(</span><span class="s">"Accuracy: %0.2f (+/- %0.2f)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">scores</span><span class="p">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">scores</span><span class="p">.</span><span class="n">std</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span>
-
-<span class="c1">#SVM avec normalisation
-</span>
-<span class="n">data_normalized</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="p">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="s">'l2'</span><span class="p">)</span>
-<span class="n">data_scaled</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="p">.</span><span class="n">scale</span><span class="p">(</span><span class="n">data_normalized</span><span class="p">)</span>
-<span class="c1"># print(data)
-# print(data_normalized)
-# print(data_scaled)
-</span><span class="n">clf</span> <span class="o">=</span> <span class="n">svm</span><span class="p">.</span><span class="n">SVC</span><span class="p">()</span>
-<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">data_scaled</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Accuracy: %0.2f (+/- %0.2f)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">scores</span><span class="p">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">scores</span><span class="p">.</span><span class="n">std</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span>
- 
-<span class="c1">#sklearn.kernel_approximation.Nystroem
-</span>
-
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accuracy: 0.66 (+/- 0.09)
-[[1.423e+01 1.710e+00 2.430e+00 ... 1.040e+00 3.920e+00 1.065e+03]
- [1.320e+01 1.780e+00 2.140e+00 ... 1.050e+00 3.400e+00 1.050e+03]
- [1.316e+01 2.360e+00 2.670e+00 ... 1.030e+00 3.170e+00 1.185e+03]
- ...
- [1.327e+01 4.280e+00 2.260e+00 ... 5.900e-01 1.560e+00 8.350e+02]
- [1.317e+01 2.590e+00 2.370e+00 ... 6.000e-01 1.620e+00 8.400e+02]
- [1.413e+01 4.100e+00 2.740e+00 ... 6.100e-01 1.600e+00 5.600e+02]]
-[[1.32644724e-02 1.59397384e-03 2.26512072e-03 ... 9.69434383e-04
-  3.65402190e-03 9.92738094e-01]
- [1.25128005e-02 1.68733218e-03 2.02859038e-03 ... 9.95336401e-04
-  3.22299406e-03 9.95336401e-01]
- [1.10630135e-02 1.98394467e-03 2.24454758e-03 ... 8.65874158e-04
-  2.66487484e-03 9.96175609e-01]
- ...
- [1.57227449e-02 5.07108879e-03 2.67772446e-03 ... 6.99051960e-04
-  1.84834078e-03 9.89336248e-01]
- [1.55136606e-02 3.05090212e-03 2.79175213e-03 ... 7.06772691e-04
-  1.90828627e-03 9.89481768e-01]
- [2.48340486e-02 7.20591644e-03 4.81566123e-03 ... 1.07209976e-03
-  2.81206495e-03 9.84222734e-01]]
-[[-0.91581829 -0.84963938 -0.98192962 ... -0.69198664 -0.17202454
-   0.66903949]
- [-1.01877873 -0.81217137 -1.15032094 ... -0.65669156 -0.39049225
-   0.92772385]
- [-1.21736365 -0.69313025 -0.99657611 ... -0.83310173 -0.6733766
-   1.01127443]
- ...
- [-0.57909582  0.54585018 -0.68818764 ... -1.06041998 -1.08723926
-   0.33035583]
- [-0.6077352  -0.26492239 -0.60700875 ... -1.04989942 -1.05685571
-   0.34484358]
- [ 0.66892719  1.40263223  0.83385812 ... -0.55209089 -0.59877286
-  -0.17873956]]
-[0.88888889 0.94444444 0.94444444 0.91428571 1.        ]
-Accuracy: 0.94 (+/- 0.07)
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-</code></pre></div></div>
-
 
   </section>
   
@@ -369,7 +222,7 @@ Accuracy: 0.94 (+/- 0.07)
 </footer>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/main.js?1607076978784555000"></script>
+<script type="text/javascript" src="/js/main.js?1607077815628063000"></script>
 
 
 

@@ -60,7 +60,7 @@ and Bayesian Methods for Hackers
   <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
   
-  <link rel="stylesheet" href="/css/main.css?1607076978784555000">
+  <link rel="stylesheet" href="/css/main.css?1607077815628063000">
   <link rel="canonical" href="http://joshgerdes.com/jekyll-uno/2016/Jupyter-notebook/">
   <link rel="alternate" type="application/rss+xml" title="Jekyll-Uno" href="/feed.xml">
   <!-- Added mathjax -->
@@ -373,7 +373,7 @@ styling, provided are two options:
 <span class="n">plt</span><span class="p">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_7_0.png" alt="png" /></p>
+<p><img src="/images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_7_0.png" alt="png" /></p>
 
 <p>The posterior probabilities are represented by the curves, and our uncertainty is proportional to the width of the curve. As the plot above shows, as we start to observe data our posterior probabilities start to shift and move around. Eventually, as we observe more and more data (coin-flips), our probabilities will tighten closer and closer around the true value of $p=0.5$ (marked by a dashed line).</p>
 
@@ -417,7 +417,7 @@ This is the posterior probability. What does it look like as a function of our p
 <span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Are there bugs in my code?"</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p><img src="images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_12_0.png" alt="png" /></p>
+<p><img src="/images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_12_0.png" alt="png" /></p>
 
 <p>We can see the biggest gains if we observe the $X$ tests passed when the prior probability, $p$, is low. Let’s settle on a specific value for the prior. I’m a strong programmer (I think), so I’m going to give myself a realistic prior of 0.20, that is, there is a 20% chance that I write code bug-free. To be more realistic, this prior should be a function of how complicated and large the code is, but let’s pin it at 0.20. Then my updated belief that my code is bug-free is 0.33.</p>
 
@@ -445,7 +445,7 @@ This is the posterior probability. What does it look like as a function of our p
 <span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">"upper left"</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p><img src="images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_14_0.png" alt="png" /></p>
+<p><img src="/images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_14_0.png" alt="png" /></p>
 
 <p>Notice that after we observed $X$ occur, the probability of bugs being absent increased. By increasing the number of tests, we can approach confidence (probability 1) that there are no bugs present.</p>
 
@@ -514,7 +514,7 @@ This is the posterior probability. What does it look like as a function of our p
 </span><span class="s">$\lambda$ values"</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p><img src="images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_17_0.png" alt="png" /></p>
+<p><img src="/images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_17_0.png" alt="png" /></p>
 
 <h3 id="continuous-case">Continuous Case</h3>
 <p>Instead of a probability mass function, a continuous random variable has a <em>probability density function</em>. This might seem like unnecessary nomenclature, but the density function and the mass function are very different creatures. An example of continuous random variable is a random variable with <em>exponential density</em>. The density function for an exponential random variable looks like this:</p>
@@ -548,7 +548,7 @@ This is the posterior probability. What does it look like as a function of our p
 </span><span class="s"> differing $\lambda$"</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p><img src="images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_19_0.png" alt="png" /></p>
+<p><img src="/images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_19_0.png" alt="png" /></p>
 
 <h3 id="but-what-is-lambda-">But what is $\lambda \;$?</h3>
 
@@ -576,7 +576,7 @@ This is the posterior probability. What does it look like as a function of our p
 <span class="n">plt</span><span class="p">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_count_data</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p><img src="images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_22_0.png" alt="png" /></p>
+<p><img src="/images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_22_0.png" alt="png" /></p>
 
 <p>Before we start modeling, see what you can figure out just by looking at the chart above. Would you say there was a change in behaviour during this time period?</p>
 
@@ -721,7 +721,7 @@ Applied log-transform to lambda_2 and added transformed lambda_2_log_ to model.
 <span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"probability"</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p><img src="images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_32_0.png" alt="png" /></p>
+<p><img src="/images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_32_0.png" alt="png" /></p>
 
 <h3 id="interpretation">Interpretation</h3>
 
@@ -776,7 +776,7 @@ Applied log-transform to lambda_2 and added transformed lambda_2_log_ to model.
 <span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">"upper left"</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p><img src="images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_35_0.png" alt="png" /></p>
+<p><img src="/images/Ch1_Introduction_PyMC3_files/Ch1_Introduction_PyMC3_35_0.png" alt="png" /></p>
 
 <p>Our analysis shows strong support for believing the user’s behavior did change ($\lambda_1$ would have been close in value to $\lambda_2$ had this not been true), and that the change was sudden rather than gradual (as demonstrated by $\tau$’s strongly peaked posterior distribution). We can speculate what might have caused this: a cheaper text-message rate, a recent weather-to-text subscription, or perhaps a new relationship. (In fact, the 45th day corresponds to Christmas, and I moved away to Toronto the next month, leaving a girlfriend behind.)</p>
 
@@ -874,7 +874,7 @@ Applied log-transform to lambda_2 and added transformed lambda_2_log_ to model.
 </footer>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/main.js?1607076978784555000"></script>
+<script type="text/javascript" src="/js/main.js?1607077815628063000"></script>
 
 
 
