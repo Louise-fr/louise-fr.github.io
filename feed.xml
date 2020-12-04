@@ -5,8 +5,8 @@
     <description>Jekyll-Uno - a minimal, responsive theme for Jekyll</description>
     <link>http://joshgerdes.com/jekyll-uno/</link>
     <atom:link href="http://joshgerdes.com/jekyll-uno/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 04 Dec 2020 11:30:15 +0100</pubDate>
-    <lastBuildDate>Fri, 04 Dec 2020 11:30:15 +0100</lastBuildDate>
+    <pubDate>Fri, 04 Dec 2020 12:09:31 +0100</pubDate>
+    <lastBuildDate>Fri, 04 Dec 2020 12:09:31 +0100</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
@@ -626,6 +626,7 @@ Applied log-transform to lambda_2 and added transformed lambda_2_log_ to model.
 &lt;span class=&quot;n&quot;&gt;css_styling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;!-- 
 &lt;style&gt;
     @font-face {
         font-family: &quot;Computer Modern&quot;;
@@ -670,7 +671,7 @@ Applied log-transform to lambda_2 and added transformed lambda_2_log_ to model.
     .warning{
         color: rgb( 240, 20, 20 )
         }  
-&lt;/style&gt;
+&lt;/style&gt; --&gt;
 
 </description>
         <pubDate>Sat, 09 Jan 2016 16:04:23 +0100</pubDate>
