@@ -60,7 +60,7 @@ and Bayesian Methods for Hackers
   <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
   
-  <link rel="stylesheet" href="/css/main.css?1607020133839507900">
+  <link rel="stylesheet" href="/css/main.css?1607074655530470900">
   <link rel="canonical" href="http://joshgerdes.com/jekyll-uno/2016/Jupyter-notebook/">
   <link rel="alternate" type="application/rss+xml" title="Jekyll-Uno" href="/feed.xml">
   <!-- Added mathjax -->
@@ -251,41 +251,13 @@ ___</p>
 
 <p>To align ourselves with traditional probability notation, we denote our belief about event $A$ as $P(A)$. We call this quantity the <em>prior probability</em>.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>John Maynard Keynes, a great economist and thinker, said “When the facts change, I change my mind. What do you do, sir?” This quote reflects the way a Bayesian updates his or her beliefs after seeing evidence. Even — especially — if the evidence is counter to what was initially believed, the evidence cannot be ignored. We denote our updated belief as $P(A</td>
-      <td>X )$, interpreted as the probability of $A$ given the evidence $X$. We call the updated belief the <em>posterior probability</em> so as to contrast it with the prior probability. For example, consider the posterior probabilities (read: posterior beliefs) of the above examples, after observing some evidence $X$:</td>
-    </tr>
-  </tbody>
-</table>
+<p>John Maynard Keynes, a great economist and thinker, said “When the facts change, I change my mind. What do you do, sir?” This quote reflects the way a Bayesian updates his or her beliefs after seeing evidence. Even — especially — if the evidence is counter to what was initially believed, the evidence cannot be ignored. We denote our updated belief as $P(A \vertX )$, interpreted as the probability of $A$ given the evidence $X$. We call the updated belief the <em>posterior probability</em> so as to contrast it with the prior probability. For example, consider the posterior probabilities (read: posterior beliefs) of the above examples, after observing some evidence $X$:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>1. $P(A): \;\;$ the coin has a 50 percent chance of being Heads. $P(A</td>
-      <td>X):\;\;$ You look at the coin, observe a Heads has landed, denote this information $X$, and trivially assign probability 1.0 to Heads and 0.0 to Tails.</td>
-    </tr>
-  </tbody>
-</table>
+<p>1. $P(A): \;\;$ the coin has a 50 percent chance of being Heads. $P(A \vert X):\;\;$ You look at the coin, observe a Heads has landed, denote this information $X$, and trivially assign probability 1.0 to Heads and 0.0 to Tails.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>2.   $P(A): \;\;$  This big, complex code likely has a bug in it. $P(A</td>
-      <td>X): \;\;$ The code passed all $X$ tests; there still might be a bug, but its presence is less likely now.</td>
-    </tr>
-  </tbody>
-</table>
+<p>2.   $P(A): \;\;$  This big, complex code likely has a bug in it. $P(A \vert X): \;\;$ The code passed all $X$ tests; there still might be a bug, but its presence is less likely now.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>3.  $P(A):\;\;$ The patient could have any number of diseases. $P(A</td>
-      <td>X):\;\;$ Performing a blood test generated evidence $X$, ruling out some of the possible diseases from consideration.</td>
-    </tr>
-  </tbody>
-</table>
+<p>3.  $P(A):\;\;$ The patient could have any number of diseases. $P(A \vert X):\;\;$ Performing a blood test generated evidence $X$, ruling out some of the possible diseases from consideration.</p>
 
 <p>It’s clear that in each example we did not completely discard the prior belief after seeing new evidence $X$, but we <em>re-weighted the prior</em> to incorporate the new evidence (i.e. we put more weight, or confidence, on some beliefs versus others).</p>
 
@@ -333,18 +305,11 @@ ___</p>
 <p>Secondly, we observe our evidence. To continue our buggy-code example: if our code passes $X$ tests, we want to update our belief to incorporate this. We call this new belief the <em>posterior</em> probability. Updating our belief is done via the following equation, known as Bayes’ Theorem, after its discoverer Thomas Bayes:</p>
 
 <p>\begin{align}
- P( A | X ) = &amp; \frac{ P(X | A) P(A) } {P(X) } \\[5pt]
-&amp; \propto P(X | A) P(A)\;\; (\propto \text{is proportional to })
+ P( A \vert X ) = &amp; \frac{ P(X \vert A) P(A) } {P(X) } \\[5pt]
+&amp; \propto P(X \vert A) P(A)\;\; (\propto \text{is proportional to })
 \end{align}</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>The above formula is not unique to Bayesian inference: it is a mathematical fact with uses outside Bayesian inference. Bayesian inference merely uses it to connect prior probabilities $P(A)$ with an updated posterior probabilities $P(A</td>
-      <td>X )$.</td>
-    </tr>
-  </tbody>
-</table>
+<p>The above formula is not unique to Bayesian inference: it is a mathematical fact with uses outside Bayesian inference. Bayesian inference merely uses it to connect prior probabilities $P(A)$ with an updated posterior probabilities $P(A \vert X )$.</p>
 
 <h5 id="example-mandatory-coin-flip-example">Example: Mandatory coin-flip example</h5>
 
@@ -420,45 +385,22 @@ styling, provided are two options:
 
 <p>Let $A$ denote the event that our code has <strong>no bugs</strong> in it. Let $X$ denote the event that the code passes all debugging tests. For now, we will leave the prior probability of no bugs as a variable, i.e. $P(A) = p$.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>We are interested in $P(A</td>
-      <td>X)$, i.e. the probability of no bugs, given our debugging tests $X$. To use the formula above, we need to compute some quantities.</td>
-    </tr>
-  </tbody>
-</table>
+<p>We are interested in $P(A\vertX)$, i.e. the probability of no bugs, given our debugging tests $X$. To use the formula above, we need to compute some quantities.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>What is $P(X</td>
-      <td>A)$, i.e., the probability that the code passes $X$ tests <em>given</em> there are no bugs? Well, it is equal to 1, for a code with no bugs will pass all tests.</td>
-    </tr>
-  </tbody>
-</table>
+<p>What is $P(X \vert A)$, i.e., the probability that the code passes $X$ tests <em>given</em> there are no bugs? Well, it is equal to 1, for a code with no bugs will pass all tests.</p>
 
 <p>$P(X)$ is a little bit trickier: The event $X$ can be divided into two possibilities, event $X$ occurring even though our code <em>indeed has</em> bugs (denoted $\sim A\;$, spoken <em>not $A$</em>), or event $X$ without bugs ($A$). $P(X)$ can be represented as:</p>
 
 <p>\begin{align}
 P(X ) &amp; = P(X \text{ and } A) + P(X \text{ and } \sim A) \\[5pt]
- &amp; = P(X|A)P(A) + P(X | \sim A)P(\sim A)\\[5pt]
-&amp; = P(X|A)p + P(X | \sim A)(1-p)
+ &amp; = P(X\vertA)P(A) + P(X \vert \sim A)P(\sim A)\\[5pt]
+&amp; = P(X\vertA)p + P(X \vert \sim A)(1-p)
 \end{align}</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>We have already computed $P(X</td>
-      <td>A)$ above. On the other hand, $P(X</td>
-      <td>\sim A)$ is subjective: our code can pass tests but still have a bug in it, though the probability there is a bug present is reduced. Note this is dependent on the number of tests performed, the degree of complication in the tests, etc. Let’s be conservative and assign $P(X</td>
-      <td>\sim A) = 0.5$. Then</td>
-    </tr>
-  </tbody>
-</table>
+<p>We have already computed $P(X\vertA)$ above. On the other hand, $P(X \vert \sim A)$ is subjective: our code can pass tests but still have a bug in it, though the probability there is a bug present is reduced. Note this is dependent on the number of tests performed, the degree of complication in the tests, etc. Let’s be conservative and assign $P(X\vert\sim A) = 0.5$. Then</p>
 
 <p>\begin{align}
-P(A | X) &amp; = \frac{1\cdot p}{ 1\cdot p +0.5 (1-p) } \<br />
+P(A \vert X) &amp; = \frac{1\cdot p}{ 1\cdot p +0.5 (1-p) } \<br />
 &amp; = \frac{ 2 p}{1+p}
 \end{align}
 This is the posterior probability. What does it look like as a function of our prior, $p \in [0,1]$?</p>
@@ -471,7 +413,7 @@ This is the posterior probability. What does it look like as a function of our p
 <span class="n">plt</span><span class="p">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Prior, $P(A) = p$"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Posterior, $P(A|X)$, with $P(A) = p$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Posterior, $P(A</span><span class="se">\v</span><span class="s">ertX)$, with $P(A) = p$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Are there bugs in my code?"</span><span class="p">);</span>
 </code></pre></div></div>
 
@@ -481,15 +423,7 @@ This is the posterior probability. What does it look like as a function of our p
 
 <p>Recall that the prior is a probability: $p$ is the prior probability that there <em>are no bugs</em>, so $1-p$ is the prior probability that there <em>are bugs</em>.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Similarly, our posterior is also a probability, with $P(A</td>
-      <td>X)$ the probability there is no bug <em>given we saw all tests pass</em>, hence $1-P(A</td>
-      <td>X)$ is the probability there is a bug <em>given all tests passed</em>. What does our posterior probability look like? Below is a chart of both the prior and the posterior probabilities.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Similarly, our posterior is also a probability, with $P(A \vert X)$ the probability there is no bug <em>given we saw all tests pass</em>, hence $1-P(A\vertX)$ is the probability there is a bug <em>given all tests passed</em>. What does our posterior probability look like? Below is a chart of both the prior and the posterior probabilities.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">colours</span> <span class="o">=</span> <span class="p">[</span><span class="s">"#348ABD"</span><span class="p">,</span> <span class="s">"#A60628"</span><span class="p">]</span>
@@ -552,7 +486,7 @@ This is the posterior probability. What does it look like as a function of our p
 
 <p>One useful property of the Poisson distribution is that its expected value is equal to its parameter, i.e.:</p>
 
-\[E\large[ \;Z\; | \; \lambda \;\large] = \lambda\]
+\[E\large[ \;Z\; \vert \; \lambda \;\large] = \lambda\]
 
 <p>We will use this property often, so it’s useful to remember. Below, we plot the probability mass distribution for different $\lambda$ values. The first thing to notice is that by increasing $\lambda$, we add more probability of larger values occurring. Second, notice that although the graph ends at 15, the distributions do not. They assign positive probability to every non-negative integer.</p>
 
@@ -585,7 +519,7 @@ This is the posterior probability. What does it look like as a function of our p
 <h3 id="continuous-case">Continuous Case</h3>
 <p>Instead of a probability mass function, a continuous random variable has a <em>probability density function</em>. This might seem like unnecessary nomenclature, but the density function and the mass function are very different creatures. An example of continuous random variable is a random variable with <em>exponential density</em>. The density function for an exponential random variable looks like this:</p>
 
-\[f_Z(z | \lambda) = \lambda e^{-\lambda z }, \;\; z\ge 0\]
+\[f_Z(z \vert \lambda) = \lambda e^{-\lambda z }, \;\; z\ge 0\]
 
 <p>Like a Poisson random variable, an exponential random variable can take on only non-negative values. But unlike a Poisson variable, the exponential can take on <em>any</em> non-negative values, including non-integral values such as 4.25 or 5.612401. This property makes it a poor choice for count data, which must be an integer, but a great choice for time data, temperature data (measured in Kelvins, of course), or any other precise <em>and positive</em> variable. The graph below shows two probability density functions with different $\lambda$ values.</p>
 
@@ -595,7 +529,7 @@ This is the posterior probability. What does it look like as a function of our p
 
 <p>Given a specific $\lambda$, the expected value of an exponential random variable is equal to the inverse of $\lambda$, that is:</p>
 
-\[E[\; Z \;|\; \lambda \;] = \frac{1}{\lambda}\]
+\[E[\; Z \;\vert\; \lambda \;] = \frac{1}{\lambda}\]
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">expo</span> <span class="o">=</span> <span class="n">stats</span><span class="p">.</span><span class="n">expon</span>
@@ -671,7 +605,7 @@ This is the posterior probability. What does it look like as a function of our p
 
 <p>$\alpha$ is called a <em>hyper-parameter</em> or <em>parent variable</em>. In literal terms, it is a parameter that influences other parameters. Our initial guess at $\alpha$ does not influence the model too strongly, so we have some flexibility in our choice.  A good rule of thumb is to set the exponential parameter equal to the inverse of the average of the count data. Since we’re modeling $\lambda$ using an exponential distribution, we can use the expected value identity shown earlier to get:</p>
 
-\[\frac{1}{N}\sum_{i=0}^N \;C_i \approx E[\; \lambda \; |\; \alpha ] = \frac{1}{\alpha}\]
+\[\frac{1}{N}\sum_{i=0}^N \;C_i \approx E[\; \lambda \; \vert\; \alpha ] = \frac{1}{\alpha}\]
 
 <p>An alternative, and something I encourage the reader to try, would be to have two priors: one for each $\lambda_i$. Creating two exponential distributions with different $\alpha$ values reflects our prior belief that the rate changed at some point during the observations.</p>
 
@@ -743,7 +677,7 @@ Applied log-transform to lambda_2 and added transformed lambda_2_log_ to model.
     <span class="n">trace</span> <span class="o">=</span> <span class="n">pm</span><span class="p">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="n">tune</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100%|██████████| 10000/10000 [00:02&lt;00:00, 4511.50it/s]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100%\vert██████████\vert 10000/10000 [00:02&lt;00:00, 4511.50it/s]
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lambda_1_samples</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s">'lambda_1'</span><span class="p">]</span>
@@ -940,7 +874,7 @@ Applied log-transform to lambda_2 and added transformed lambda_2_log_ to model.
 </footer>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/main.js?1607020133839507900"></script>
+<script type="text/javascript" src="/js/main.js?1607074655530470900"></script>
 
 
 

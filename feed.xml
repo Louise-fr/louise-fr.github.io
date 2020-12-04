@@ -5,8 +5,8 @@
     <description>Jekyll-Uno - a minimal, responsive theme for Jekyll</description>
     <link>http://joshgerdes.com/jekyll-uno/</link>
     <atom:link href="http://joshgerdes.com/jekyll-uno/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 03 Dec 2020 19:28:53 +0100</pubDate>
-    <lastBuildDate>Thu, 03 Dec 2020 19:28:53 +0100</lastBuildDate>
+    <pubDate>Fri, 04 Dec 2020 10:37:35 +0100</pubDate>
+    <lastBuildDate>Fri, 04 Dec 2020 10:37:35 +0100</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
@@ -63,41 +63,13 @@ ___&lt;/p&gt;
 
 &lt;p&gt;To align ourselves with traditional probability notation, we denote our belief about event $A$ as $P(A)$. We call this quantity the &lt;em&gt;prior probability&lt;/em&gt;.&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;John Maynard Keynes, a great economist and thinker, said “When the facts change, I change my mind. What do you do, sir?” This quote reflects the way a Bayesian updates his or her beliefs after seeing evidence. Even — especially — if the evidence is counter to what was initially believed, the evidence cannot be ignored. We denote our updated belief as $P(A&lt;/td&gt;
-      &lt;td&gt;X )$, interpreted as the probability of $A$ given the evidence $X$. We call the updated belief the &lt;em&gt;posterior probability&lt;/em&gt; so as to contrast it with the prior probability. For example, consider the posterior probabilities (read: posterior beliefs) of the above examples, after observing some evidence $X$:&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;John Maynard Keynes, a great economist and thinker, said “When the facts change, I change my mind. What do you do, sir?” This quote reflects the way a Bayesian updates his or her beliefs after seeing evidence. Even — especially — if the evidence is counter to what was initially believed, the evidence cannot be ignored. We denote our updated belief as $P(A \vertX )$, interpreted as the probability of $A$ given the evidence $X$. We call the updated belief the &lt;em&gt;posterior probability&lt;/em&gt; so as to contrast it with the prior probability. For example, consider the posterior probabilities (read: posterior beliefs) of the above examples, after observing some evidence $X$:&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1. $P(A): \;\;$ the coin has a 50 percent chance of being Heads. $P(A&lt;/td&gt;
-      &lt;td&gt;X):\;\;$ You look at the coin, observe a Heads has landed, denote this information $X$, and trivially assign probability 1.0 to Heads and 0.0 to Tails.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;1. $P(A): \;\;$ the coin has a 50 percent chance of being Heads. $P(A \vert X):\;\;$ You look at the coin, observe a Heads has landed, denote this information $X$, and trivially assign probability 1.0 to Heads and 0.0 to Tails.&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2.   $P(A): \;\;$  This big, complex code likely has a bug in it. $P(A&lt;/td&gt;
-      &lt;td&gt;X): \;\;$ The code passed all $X$ tests; there still might be a bug, but its presence is less likely now.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;2.   $P(A): \;\;$  This big, complex code likely has a bug in it. $P(A \vert X): \;\;$ The code passed all $X$ tests; there still might be a bug, but its presence is less likely now.&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;3.  $P(A):\;\;$ The patient could have any number of diseases. $P(A&lt;/td&gt;
-      &lt;td&gt;X):\;\;$ Performing a blood test generated evidence $X$, ruling out some of the possible diseases from consideration.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;3.  $P(A):\;\;$ The patient could have any number of diseases. $P(A \vert X):\;\;$ Performing a blood test generated evidence $X$, ruling out some of the possible diseases from consideration.&lt;/p&gt;
 
 &lt;p&gt;It’s clear that in each example we did not completely discard the prior belief after seeing new evidence $X$, but we &lt;em&gt;re-weighted the prior&lt;/em&gt; to incorporate the new evidence (i.e. we put more weight, or confidence, on some beliefs versus others).&lt;/p&gt;
 
@@ -145,18 +117,11 @@ ___&lt;/p&gt;
 &lt;p&gt;Secondly, we observe our evidence. To continue our buggy-code example: if our code passes $X$ tests, we want to update our belief to incorporate this. We call this new belief the &lt;em&gt;posterior&lt;/em&gt; probability. Updating our belief is done via the following equation, known as Bayes’ Theorem, after its discoverer Thomas Bayes:&lt;/p&gt;
 
 &lt;p&gt;\begin{align}
- P( A | X ) = &amp;amp; \frac{ P(X | A) P(A) } {P(X) } \\[5pt]
-&amp;amp; \propto P(X | A) P(A)\;\; (\propto \text{is proportional to })
+ P( A \vert X ) = &amp;amp; \frac{ P(X \vert A) P(A) } {P(X) } \\[5pt]
+&amp;amp; \propto P(X \vert A) P(A)\;\; (\propto \text{is proportional to })
 \end{align}&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;The above formula is not unique to Bayesian inference: it is a mathematical fact with uses outside Bayesian inference. Bayesian inference merely uses it to connect prior probabilities $P(A)$ with an updated posterior probabilities $P(A&lt;/td&gt;
-      &lt;td&gt;X )$.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;The above formula is not unique to Bayesian inference: it is a mathematical fact with uses outside Bayesian inference. Bayesian inference merely uses it to connect prior probabilities $P(A)$ with an updated posterior probabilities $P(A \vert X )$.&lt;/p&gt;
 
 &lt;h5 id=&quot;example-mandatory-coin-flip-example&quot;&gt;Example: Mandatory coin-flip example&lt;/h5&gt;
 
@@ -232,45 +197,22 @@ styling, provided are two options:
 
 &lt;p&gt;Let $A$ denote the event that our code has &lt;strong&gt;no bugs&lt;/strong&gt; in it. Let $X$ denote the event that the code passes all debugging tests. For now, we will leave the prior probability of no bugs as a variable, i.e. $P(A) = p$.&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;We are interested in $P(A&lt;/td&gt;
-      &lt;td&gt;X)$, i.e. the probability of no bugs, given our debugging tests $X$. To use the formula above, we need to compute some quantities.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;We are interested in $P(A\vertX)$, i.e. the probability of no bugs, given our debugging tests $X$. To use the formula above, we need to compute some quantities.&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;What is $P(X&lt;/td&gt;
-      &lt;td&gt;A)$, i.e., the probability that the code passes $X$ tests &lt;em&gt;given&lt;/em&gt; there are no bugs? Well, it is equal to 1, for a code with no bugs will pass all tests.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;What is $P(X \vert A)$, i.e., the probability that the code passes $X$ tests &lt;em&gt;given&lt;/em&gt; there are no bugs? Well, it is equal to 1, for a code with no bugs will pass all tests.&lt;/p&gt;
 
 &lt;p&gt;$P(X)$ is a little bit trickier: The event $X$ can be divided into two possibilities, event $X$ occurring even though our code &lt;em&gt;indeed has&lt;/em&gt; bugs (denoted $\sim A\;$, spoken &lt;em&gt;not $A$&lt;/em&gt;), or event $X$ without bugs ($A$). $P(X)$ can be represented as:&lt;/p&gt;
 
 &lt;p&gt;\begin{align}
 P(X ) &amp;amp; = P(X \text{ and } A) + P(X \text{ and } \sim A) \\[5pt]
- &amp;amp; = P(X|A)P(A) + P(X | \sim A)P(\sim A)\\[5pt]
-&amp;amp; = P(X|A)p + P(X | \sim A)(1-p)
+ &amp;amp; = P(X\vertA)P(A) + P(X \vert \sim A)P(\sim A)\\[5pt]
+&amp;amp; = P(X\vertA)p + P(X \vert \sim A)(1-p)
 \end{align}&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;We have already computed $P(X&lt;/td&gt;
-      &lt;td&gt;A)$ above. On the other hand, $P(X&lt;/td&gt;
-      &lt;td&gt;\sim A)$ is subjective: our code can pass tests but still have a bug in it, though the probability there is a bug present is reduced. Note this is dependent on the number of tests performed, the degree of complication in the tests, etc. Let’s be conservative and assign $P(X&lt;/td&gt;
-      &lt;td&gt;\sim A) = 0.5$. Then&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;We have already computed $P(X\vertA)$ above. On the other hand, $P(X \vert \sim A)$ is subjective: our code can pass tests but still have a bug in it, though the probability there is a bug present is reduced. Note this is dependent on the number of tests performed, the degree of complication in the tests, etc. Let’s be conservative and assign $P(X\vert\sim A) = 0.5$. Then&lt;/p&gt;
 
 &lt;p&gt;\begin{align}
-P(A | X) &amp;amp; = \frac{1\cdot p}{ 1\cdot p +0.5 (1-p) } \&lt;br /&gt;
+P(A \vert X) &amp;amp; = \frac{1\cdot p}{ 1\cdot p +0.5 (1-p) } \&lt;br /&gt;
 &amp;amp; = \frac{ 2 p}{1+p}
 \end{align}
 This is the posterior probability. What does it look like as a function of our prior, $p \in [0,1]$?&lt;/p&gt;
@@ -283,7 +225,7 @@ This is the posterior probability. What does it look like as a function of our p
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xlim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ylim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xlabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Prior, $P(A) = p$&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ylabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Posterior, $P(A|X)$, with $P(A) = p$&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ylabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Posterior, $P(A&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\v&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ertX)$, with $P(A) = p$&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Are there bugs in my code?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -293,15 +235,7 @@ This is the posterior probability. What does it look like as a function of our p
 
 &lt;p&gt;Recall that the prior is a probability: $p$ is the prior probability that there &lt;em&gt;are no bugs&lt;/em&gt;, so $1-p$ is the prior probability that there &lt;em&gt;are bugs&lt;/em&gt;.&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Similarly, our posterior is also a probability, with $P(A&lt;/td&gt;
-      &lt;td&gt;X)$ the probability there is no bug &lt;em&gt;given we saw all tests pass&lt;/em&gt;, hence $1-P(A&lt;/td&gt;
-      &lt;td&gt;X)$ is the probability there is a bug &lt;em&gt;given all tests passed&lt;/em&gt;. What does our posterior probability look like? Below is a chart of both the prior and the posterior probabilities.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;Similarly, our posterior is also a probability, with $P(A \vert X)$ the probability there is no bug &lt;em&gt;given we saw all tests pass&lt;/em&gt;, hence $1-P(A\vertX)$ is the probability there is a bug &lt;em&gt;given all tests passed&lt;/em&gt;. What does our posterior probability look like? Below is a chart of both the prior and the posterior probabilities.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;figsize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;12.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;colours&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#348ABD&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;#A60628&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
@@ -364,7 +298,7 @@ This is the posterior probability. What does it look like as a function of our p
 
 &lt;p&gt;One useful property of the Poisson distribution is that its expected value is equal to its parameter, i.e.:&lt;/p&gt;
 
-\[E\large[ \;Z\; | \; \lambda \;\large] = \lambda\]
+\[E\large[ \;Z\; \vert \; \lambda \;\large] = \lambda\]
 
 &lt;p&gt;We will use this property often, so it’s useful to remember. Below, we plot the probability mass distribution for different $\lambda$ values. The first thing to notice is that by increasing $\lambda$, we add more probability of larger values occurring. Second, notice that although the graph ends at 15, the distributions do not. They assign positive probability to every non-negative integer.&lt;/p&gt;
 
@@ -397,7 +331,7 @@ This is the posterior probability. What does it look like as a function of our p
 &lt;h3 id=&quot;continuous-case&quot;&gt;Continuous Case&lt;/h3&gt;
 &lt;p&gt;Instead of a probability mass function, a continuous random variable has a &lt;em&gt;probability density function&lt;/em&gt;. This might seem like unnecessary nomenclature, but the density function and the mass function are very different creatures. An example of continuous random variable is a random variable with &lt;em&gt;exponential density&lt;/em&gt;. The density function for an exponential random variable looks like this:&lt;/p&gt;
 
-\[f_Z(z | \lambda) = \lambda e^{-\lambda z }, \;\; z\ge 0\]
+\[f_Z(z \vert \lambda) = \lambda e^{-\lambda z }, \;\; z\ge 0\]
 
 &lt;p&gt;Like a Poisson random variable, an exponential random variable can take on only non-negative values. But unlike a Poisson variable, the exponential can take on &lt;em&gt;any&lt;/em&gt; non-negative values, including non-integral values such as 4.25 or 5.612401. This property makes it a poor choice for count data, which must be an integer, but a great choice for time data, temperature data (measured in Kelvins, of course), or any other precise &lt;em&gt;and positive&lt;/em&gt; variable. The graph below shows two probability density functions with different $\lambda$ values.&lt;/p&gt;
 
@@ -407,7 +341,7 @@ This is the posterior probability. What does it look like as a function of our p
 
 &lt;p&gt;Given a specific $\lambda$, the expected value of an exponential random variable is equal to the inverse of $\lambda$, that is:&lt;/p&gt;
 
-\[E[\; Z \;|\; \lambda \;] = \frac{1}{\lambda}\]
+\[E[\; Z \;\vert\; \lambda \;] = \frac{1}{\lambda}\]
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;expo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expon&lt;/span&gt;
@@ -483,7 +417,7 @@ This is the posterior probability. What does it look like as a function of our p
 
 &lt;p&gt;$\alpha$ is called a &lt;em&gt;hyper-parameter&lt;/em&gt; or &lt;em&gt;parent variable&lt;/em&gt;. In literal terms, it is a parameter that influences other parameters. Our initial guess at $\alpha$ does not influence the model too strongly, so we have some flexibility in our choice.  A good rule of thumb is to set the exponential parameter equal to the inverse of the average of the count data. Since we’re modeling $\lambda$ using an exponential distribution, we can use the expected value identity shown earlier to get:&lt;/p&gt;
 
-\[\frac{1}{N}\sum_{i=0}^N \;C_i \approx E[\; \lambda \; |\; \alpha ] = \frac{1}{\alpha}\]
+\[\frac{1}{N}\sum_{i=0}^N \;C_i \approx E[\; \lambda \; \vert\; \alpha ] = \frac{1}{\alpha}\]
 
 &lt;p&gt;An alternative, and something I encourage the reader to try, would be to have two priors: one for each $\lambda_i$. Creating two exponential distributions with different $\alpha$ values reflects our prior belief that the rate changed at some point during the observations.&lt;/p&gt;
 
@@ -555,7 +489,7 @@ Applied log-transform to lambda_2 and added transformed lambda_2_log_ to model.
     &lt;span class=&quot;n&quot;&gt;trace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tune&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;100%|██████████| 10000/10000 [00:02&amp;lt;00:00, 4511.50it/s]
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;100%\vert██████████\vert 10000/10000 [00:02&amp;lt;00:00, 4511.50it/s]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;lambda_1_samples&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'lambda_1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
